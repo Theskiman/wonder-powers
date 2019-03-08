@@ -17,37 +17,27 @@ function delPowersFunction(oldClass) {
 
     }
 }
-document.querySelector("#activate-all").addEventListener("click", function () {
-    allPowersFunction("enabled")
+
+function allSpecPowersFunction(newClass) {
+   let elSel = event.target.id.split("-")
+   let targEl = document.getElementById(elSel[1])
+   
+    targEl.classList.toggle(newClass)
+    targEl.classList.toggle("disabled")
+    console.log(event.target.id.split("-"))
+}
+
+addEventListener("click", function () {
+    allSpecPowersFunction("enabled")
 
 })
+
 document.querySelector("#deactivate-all").addEventListener("click", function () {
     delPowersFunction("enabled")
 
 })
 
-function allSpecPowersFunction(newClass, power) {
-    power.classList.toggle(newClass)
-    power.classList.toggle("disabled")
-}
-
-
-
-
-document.querySelector("#activate-flight").addEventListener("click", function () {
-    allSpecPowersFunction("enabled", flight)
-
-
-})
-
-document.querySelector("#activate-mindreading").addEventListener("click", function () {
-    allSpecPowersFunction("enabled", mindReader)
-
-
-})
-
-document.querySelector("#activate-xray").addEventListener("click", function () {
-    allSpecPowersFunction("enabled", xRay)
-
+document.querySelector("#activate-all").addEventListener("click", function () {
+    allPowersFunction("enabled")
 
 })
