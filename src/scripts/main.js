@@ -28,6 +28,7 @@ document.querySelector("#deactivate-all").addEventListener("click", function () 
 
 function allSpecPowersFunction(newClass, power) {
     power.classList.toggle(newClass)
+    power.classList.toggle("disabled")
 }
 
 
